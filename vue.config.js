@@ -1,5 +1,5 @@
 module.exports = {
-    publicPath: '/data/vuecharts',
+    publicPath: '/data/chartcurve',
     productionSourceMap: false, // 不生成用于调试的sourcemap文件
     css: {
         sourceMap: false, // 不生成用于调试的sourcemap文件
