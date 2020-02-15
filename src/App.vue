@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ChartCurve></ChartCurve>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ChartCurve from './components/chartcurve.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ChartCurve
   }
 }
 </script>
@@ -24,5 +23,15 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  width: 100%;
+  height: 100%;
+}
+
+html, body {
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
 }
 </style>
