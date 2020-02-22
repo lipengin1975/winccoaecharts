@@ -1,7 +1,7 @@
 # Chartcurve
 ## Overview
 Chartcurve is a simple project for a trend webpage which is displayed in the webviewer ewo of WinCC OA.  
-It's built with ECharts in a VUE 2.0 project and you can deploy it on the project_dir/data/chartcurve directory. If you want to change the deploy directory please modify the publicPath in vue.config.js file before execute "npm run build" in your terminal.
+It's built with ECharts.js in a VUE 2.0 project and you can deploy it on the WINCCOA_PROJECTDIR/data/chartcurve directory. If you want to change the deploy directory please modify the publicPath in vue.config.js file before execute "npm run build" in your terminal.
 ## Project setup
 ```
 npm install
@@ -32,14 +32,14 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Using in WinCC OA
-Place a webview ewo on a panel, modify Initialize event function:
+Place a webview ewo on a panel, modify "Initialize" event function:
 ```c++
 main()
 {
   this.loadSnippet("/data/chartcurve/index.html");
 }
 ```
-In messageReceive Extended event function of the webview ewo, add such code like:
+In Extended event function named "messageReceive" of the webview ewo, add such code:
 ```c++
 messageReceived(mapping params)
 {
