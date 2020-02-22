@@ -1,7 +1,9 @@
 # Chartcurve
+
 ## Overview
-Chartcurve is a simple project for a trend webpage which is displayed in the webviewer ewo of WinCC OA.  
-It's built with ECharts.js in a VUE 2.0 project and you can deploy it on the WINCCOA_PROJECTDIR/data/chartcurve directory. If you want to change the deploy directory please modify the publicPath in vue.config.js file before execute "npm run build" in your terminal.
+Chartcurve is a simple project for a history trend webpage which is displayed in the webviewer ewo of WinCC OA.  
+It's built with ECharts.js in a VUE 2.0 project and you can deploy it on the WINCCOA_PROJECTDIR/data/chartcurve directory. If you want to change the deploy directory, please modify the publicPath in vue.config.js file before execute "npm run build" in your terminal.
+
 ## Project setup
 ```
 npm install
@@ -195,3 +197,4 @@ messageReceived(mapping params)
   }
 }
 ```
+*** Note: the fist parameter of makeSeriesOption function is a DPE name, it must have the actived _archive config ***
