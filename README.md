@@ -32,14 +32,7 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Using in WinCC OA
-Place a webview ewo on a panel, modify "Initialize" event function:
-```c++
-main()
-{
-  this.loadSnippet("/data/chartcurve/index.html");
-}
-```
-Add the follow code in the "ScopLib" of the panel
+1. Add the follow code in the "ScopLib" of the panel or add it to your own library scripts
 ```c++
 /**
   * 拼装历史数据
@@ -166,7 +159,14 @@ mapping makeSeriesOption(string tagName, string name, string type, bool smooth =
   return option;
 }
 ```
-In Extended event function named "messageReceive" of the webview ewo, add such code:
+2. Place a webview ewo on a panel, modify "Initialize" event function:
+```c++
+main()
+{
+  this.loadSnippet("/data/chartcurve/index.html");
+}
+```
+3. In Extended event function named "messageReceive" of the webview ewo, add following code:
 ```c++
 messageReceived(mapping params)
 {
