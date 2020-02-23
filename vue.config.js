@@ -1,9 +1,10 @@
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 
-const WinCC_PROJ_DIR = 'D:/temp/W316/data/chartcurve'
+const PUBLICPATH='/data/chartcurve';
+const WinCC_PROJ_DIR = `D:/temp/W316`;
 
 module.exports = {
-    publicPath: '/data/chartcurve',
+    publicPath: `${PUBLICPATH}`,
     productionSourceMap: false, // 不生成用于调试的sourcemap文件
     css: {
         sourceMap: false, // 不生成用于调试的sourcemap文件
@@ -18,13 +19,13 @@ module.exports = {
             new FileManagerPlugin({
                 onStart: {
                     delete: [
-                        `${WinCC_PROJ_DIR}/*.html`,
-                        `${WinCC_PROJ_DIR}/js`
+                        `${WinCC_PROJ_DIR}${PUBLICPATH}/*.html`,
+                        `${WinCC_PROJ_DIR}${PUBLICPATH}/js`
                     ]
                 },
                 onEnd: {
                     copy: [
-                        {source: './dist/', destination: `${WinCC_PROJ_DIR}/chartcurve/`}
+                        {source: './dist/', destination: `${WinCC_PROJ_DIR}${PUBLICPATH}`}
                     ]
                 }
             })
